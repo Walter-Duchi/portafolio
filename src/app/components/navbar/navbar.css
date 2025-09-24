@@ -1,0 +1,17 @@
+.nav-links {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 4rem;
+  border: 2px solid #1b0089;
+  background-color: aqua;
+  width: 100% !important;
+  position: fixed;
+
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}

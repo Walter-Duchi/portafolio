@@ -1,12 +1,17 @@
 import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
 import { Header } from './components/header/header';
-import { Footer } from './components/footer/footer';
+import { Navbar } from './components/navbar/navbar';
+import { Technologies } from './components/technologies/technologies';
+import { Proyects } from './components/proyects/proyects';
+import { Skills } from './components/skills/skills';
+import { Certificates } from './components/certificates/certificates';
+import { Contact } from './components/contact/contact';
 
 @Component({
   selector: 'app-root',
-  imports: [Header, Footer],
+  imports: [Header, Navbar, Technologies, Proyects, Skills, Certificates, Contact],
   templateUrl: './app.html',
-  styleUrl: './app.scss',
+  styleUrl: './app.css',
   changeDetection: ChangeDetectionStrategy.OnPush, //evitar comprobaciones innecesarias
 })
 export class App {
