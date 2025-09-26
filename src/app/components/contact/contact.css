@@ -1,51 +1,64 @@
-/* === CONTACTO === */
+/* === CONTACTO MEJORADO === */
 #contacto {
-  background-color: var(--bg-primary);
+  background-color: var(--bg-secondary);
+  border-radius: 12px;
+  margin: 2rem auto;
+  padding: 4rem 2rem;
   text-align: center;
+  border: 1px solid var(--border-color);
+}
+
+.highlight {
+  color: var(--text-accent);
+  font-weight: 600;
 }
 
 .contact-buttons {
   display: flex;
   justify-content: center;
   gap: 1.5rem;
-  margin-top: 2.5rem;
+  margin-top: 2rem;
   flex-wrap: wrap;
 }
 
 .contact-button {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 1rem 2.5rem;
-  background-color: var(--button-primary);
+  display: inline-block;
+  padding: 1rem 2rem;
+  background-color: var(--text-accent);
   color: white;
   border-radius: 8px;
   font-weight: 600;
   transition: all 0.3s ease;
-  border: 2px solid var(--button-primary);
+  border: 2px solid var(--text-accent);
   font-size: 1rem;
   text-decoration: none;
+  min-width: 200px;
 }
 
 .contact-button:hover {
-  background-color: var(--button-primary-hover);
-  border-color: var(--button-primary-hover);
+  background-color: transparent;
+  color: var(--text-accent);
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(59, 130, 246, 0.3);
+  box-shadow: var(--card-shadow);
 }
 
 .contact-button.twitter {
   background-color: #1da1f2;
   border-color: #1da1f2;
+  color: white;
 }
 
 .contact-button.twitter:hover {
-  background-color: #0d8bd9;
-  border-color: #0d8bd9;
-  box-shadow: 0 6px 20px rgba(29, 161, 242, 0.3);
+  background-color: transparent;
+  color: #1da1f2;
 }
 
 @media (max-width: 768px) {
+  #contacto {
+    padding: 3rem 1rem;
+    margin: 1rem auto;
+  }
+
   .contact-buttons {
     flex-direction: column;
     align-items: center;
@@ -54,14 +67,6 @@
 
   .contact-button {
     width: 100%;
-    max-width: 280px;
-    justify-content: center;
-  }
-}
-
-@media (max-width: 480px) {
-  .contact-button {
-    padding: 0.875rem 2rem;
-    font-size: 0.95rem;
+    max-width: 300px;
   }
 }
