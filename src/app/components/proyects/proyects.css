@@ -1,62 +1,65 @@
 /* === PROYECTOS === */
 #proyectos {
   background-color: var(--bg-secondary);
-  border-radius: 15px;
-  margin: 2rem auto;
-  padding: 4rem 2rem;
 }
 
 .proyect-nav {
   display: flex;
   justify-content: center;
-  gap: 1rem;
+  gap: 0.75rem;
   flex-wrap: wrap;
   margin-bottom: 3rem;
 }
 
 .proyect-nav a {
-  padding: 0.6rem 1.2rem;
-  border-radius: 30px;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
   color: var(--text-secondary);
   font-weight: 500;
   transition: all 0.3s ease;
-  border: 1px solid var(--border-color);
+  border: 2px solid var(--border-color);
   background-color: var(--bg-card);
+  font-size: 0.95rem;
 }
 
-.proyect-nav a:hover,
+.proyect-nav a:hover {
+  border-color: var(--text-accent);
+  color: var(--text-accent);
+  transform: translateY(-1px);
+}
+
 .proyect-nav a.active {
-  background: var(--gradient-primary);
+  background-color: var(--text-accent);
   color: white;
-  border-color: transparent;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px var(--shadow);
+  border-color: var(--text-accent);
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.3);
 }
 
 .proyect-container {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 2.5rem;
 }
 
 .proyect-card {
   background: var(--bg-card);
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 5px 15px var(--shadow);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 20px var(--shadow);
+  transition: all 0.3s ease;
   display: flex;
   border: 1px solid var(--border-color);
 }
 
 .proyect-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 25px var(--shadow);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 30px var(--shadow);
   border-color: var(--text-accent);
 }
 
 .proyect-image {
-  flex: 0 0 40%;
+  flex: 0 0 45%;
   overflow: hidden;
   position: relative;
   aspect-ratio: 16/9;
@@ -70,15 +73,16 @@
 }
 
 .proyect-card:hover img {
-  transform: scale(1.05);
+  transform: scale(1.03);
 }
 
 .proyect-info {
-  padding: 2rem;
+  padding: 2.5rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   flex: 1;
+  gap: 1.5rem;
 }
 
 .proyect-category {
@@ -91,91 +95,81 @@
 }
 
 .proyect-info h3 {
-  font-size: 1.6rem;
+  font-size: 1.5rem;
   color: var(--text-primary);
   margin-bottom: 1rem;
+  line-height: 1.3;
 }
 
 .proyect-description {
   color: var(--text-secondary);
-  margin-bottom: 1.5rem;
   line-height: 1.6;
+  flex-grow: 1;
 }
 
 .proyect-links {
   display: flex;
   gap: 1rem;
-  margin-bottom: 1.5rem;
-}
-
-.btn {
-  padding: 0.7rem 1.5rem;
-  border-radius: 6px;
-  font-weight: 500;
-  transition: all 0.3s ease;
-  text-align: center;
-  display: inline-block;
-  border: 1px solid var(--text-accent);
-}
-
-.btn:first-child {
-  background-color: var(--text-accent);
-  color: white;
-}
-
-.btn:last-child {
-  background-color: transparent;
-  color: var(--text-accent);
-}
-
-.btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px var(--shadow);
-}
-
-.btn:first-child:hover {
-  background-color: transparent;
-  color: var(--text-accent);
-}
-
-.btn:last-child:hover {
-  background-color: var(--text-accent);
-  color: white;
+  margin-top: auto;
 }
 
 .proyect-tags {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
+  margin-top: 1rem;
 }
 
 .proyect-tags span {
   background-color: rgba(59, 130, 246, 0.1);
   color: var(--text-accent);
-  padding: 0.3rem 0.8rem;
-  border-radius: 20px;
-  font-size: 0.75rem;
+  padding: 0.4rem 0.8rem;
+  border-radius: 16px;
+  font-size: 0.8rem;
   font-weight: 500;
+  border: 1px solid rgba(59, 130, 246, 0.2);
 }
 
-@media (max-width: 900px) {
+@media (max-width: 968px) {
   .proyect-card {
     flex-direction: column;
   }
 
   .proyect-image {
-    flex: 0 0 auto;
-    aspect-ratio: 16/9;
+    flex: 0 0 300px;
+  }
+
+  .proyect-info {
+    padding: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .proyect-nav {
+    gap: 0.5rem;
+  }
+
+  .proyect-nav a {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
   }
 
   .proyect-info {
     padding: 1.5rem;
   }
+
+  .proyect-links {
+    flex-direction: column;
+  }
+
+  .proyect-info h3 {
+    font-size: 1.3rem;
+  }
 }
 
-@media (max-width: 768px) {
-  #proyectos {
-    padding: 3rem 1rem;
+@media (max-width: 480px) {
+  .proyect-image {
+    flex: 0 0 250px;
   }
 
   .proyect-nav {
@@ -184,11 +178,8 @@
   }
 
   .proyect-nav a {
-    width: 80%;
+    width: 100%;
+    max-width: 200px;
     text-align: center;
-  }
-
-  .proyect-links {
-    flex-direction: column;
   }
 }

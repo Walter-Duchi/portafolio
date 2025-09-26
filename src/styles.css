@@ -1,32 +1,46 @@
 /* === VARIABLES CSS PARA TEMA CLARO/OSCURO === */
 :root {
-  /* Colores base - Tema oscuro (por defecto) */
-  --bg-primary: #0f172a;
-  --bg-secondary: rgba(30, 41, 59, 0.7);
-  --bg-card: rgba(15, 23, 42, 0.8);
-  --text-primary: #e2e8f0;
-  --text-secondary: #94a3b8;
+  /* Paleta de colores profesional - Tema oscuro (por defecto) */
+  --bg-primary: #0a0a0a;
+  --bg-secondary: #1a1a1a;
+  --bg-card: #2d2d2d;
+  --text-primary: #ffffff;
+  --text-secondary: #b0b0b0;
   --text-accent: #3b82f6;
-  --border-color: rgba(255, 255, 255, 0.1);
-  --shadow: rgba(0, 0, 0, 0.2);
-  --gradient-primary: linear-gradient(90deg, #3b82f6, #8b5cf6);
-  --gradient-secondary: linear-gradient(135deg, #3b82f6, #8b5cf6);
-  --navbar-bg: rgba(15, 23, 42, 0.95);
+  --text-success: #10b981;
+  --border-color: #404040;
+  --shadow: rgba(0, 0, 0, 0.3);
+  --navbar-bg: rgba(10, 10, 10, 0.95);
+
+  /* Colores para botones y estados */
+  --button-primary: #3b82f6;
+  --button-primary-hover: #2563eb;
+  --button-secondary: #404040;
+  --button-secondary-hover: #525252;
+  --tag-bg: #3b82f6;
+  --tag-text: #ffffff;
 }
 
 [data-theme='light'] {
-  /* Colores base - Tema claro */
-  --bg-primary: #f8fafc;
-  --bg-secondary: rgba(226, 232, 240, 0.7);
-  --bg-card: rgba(248, 250, 252, 0.9);
-  --text-primary: #1e293b;
-  --text-secondary: #475569;
+  /* Paleta de colores profesional - Tema claro */
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8f9fa;
+  --bg-card: #ffffff;
+  --text-primary: #1a1a1a;
+  --text-secondary: #666666;
   --text-accent: #2563eb;
-  --border-color: rgba(30, 41, 59, 0.1);
-  --shadow: rgba(30, 41, 59, 0.1);
-  --gradient-primary: linear-gradient(90deg, #2563eb, #4f46e5);
-  --gradient-secondary: linear-gradient(135deg, #2563eb, #4f46e5);
-  --navbar-bg: rgba(248, 250, 252, 0.95);
+  --text-success: #059669;
+  --border-color: #e0e0e0;
+  --shadow: rgba(0, 0, 0, 0.1);
+  --navbar-bg: rgba(255, 255, 255, 0.95);
+
+  /* Colores para botones y estados */
+  --button-primary: #2563eb;
+  --button-primary-hover: #1d4ed8;
+  --button-secondary: #e5e7eb;
+  --button-secondary-hover: #d1d5db;
+  --tag-bg: #2563eb;
+  --tag-text: #ffffff;
 }
 
 /* === ESTILOS GENERALES === */
@@ -34,7 +48,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
   transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 
@@ -43,25 +57,46 @@ body {
   color: var(--text-primary);
   line-height: 1.6;
   scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+/* Contenedor principal para limitar el ancho */
+.container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 2rem;
 }
 
 section {
   display: flex;
   flex-direction: column;
-  padding: 4rem 2rem;
+  padding: 5rem 0;
+}
+
+.section-content {
   max-width: 1200px;
   width: 100%;
   margin: 0 auto;
+  padding: 0 2rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--text-primary);
+  font-weight: 600;
+  line-height: 1.3;
 }
 
 h2 {
   font-size: 2.5rem;
   text-align: center;
   margin-bottom: 1rem;
-  background: var(--gradient-primary);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+  color: var(--text-primary);
   font-weight: 700;
 }
 
@@ -73,6 +108,12 @@ h2 {
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
+  line-height: 1.7;
+}
+
+.highlight {
+  color: var(--text-accent);
+  font-weight: 600;
 }
 
 li {
@@ -84,23 +125,129 @@ a {
   color: inherit;
 }
 
+/* === BOTONES MODERNOS === */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.875rem 2rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+  cursor: pointer;
+  text-align: center;
+  gap: 0.5rem;
+}
+
+.btn-primary {
+  background-color: var(--button-primary);
+  color: white;
+  border-color: var(--button-primary);
+}
+
+.btn-primary:hover {
+  background-color: var(--button-primary-hover);
+  border-color: var(--button-primary-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--text-primary);
+  border-color: var(--border-color);
+}
+
+.btn-secondary:hover {
+  background-color: var(--button-secondary);
+  border-color: var(--button-secondary-hover);
+  transform: translateY(-2px);
+}
+
+/* === ETIQUETAS MODERNAS === */
+.tag {
+  display: inline-flex;
+  align-items: center;
+  background-color: var(--tag-bg);
+  color: var(--tag-text);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
+}
+
+.tag:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
 /* === RESPONSIVE === */
+@media (max-width: 1024px) {
+  .container {
+    padding: 0 1.5rem;
+  }
+
+  .section-content {
+    padding: 0 1.5rem;
+  }
+}
+
 @media (max-width: 768px) {
   section {
-    padding: 3rem 1rem;
+    padding: 3rem 0;
+  }
+
+  .section-content {
+    padding: 0 1rem;
   }
 
   h2 {
     font-size: 2rem;
   }
+
+  .container {
+    padding: 0 1rem;
+  }
 }
 
 @media (max-width: 480px) {
   section {
-    padding: 2rem 0.5rem;
+    padding: 2rem 0;
   }
 
   h2 {
-    font-size: 1.8rem;
+    font-size: 1.75rem;
   }
+
+  .btn {
+    padding: 0.75rem 1.5rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* === MEJORAS DE ACCESIBILIDAD === */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid var(--text-accent);
+  outline-offset: 2px;
+}
+
+/* Mejor legibilidad */
+body {
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }

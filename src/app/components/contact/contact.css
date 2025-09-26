@@ -1,41 +1,37 @@
 /* === CONTACTO === */
 #contacto {
-  background-color: rgba(30, 41, 59, 0.3);
-  border-radius: 15px;
-  margin: 2rem auto;
+  background-color: var(--bg-primary);
   text-align: center;
-}
-
-.highlight {
-  color: #3b82f6;
-  font-weight: 600;
 }
 
 .contact-buttons {
   display: flex;
   justify-content: center;
   gap: 1.5rem;
-  margin-top: 2rem;
+  margin-top: 2.5rem;
   flex-wrap: wrap;
 }
 
 .contact-button {
-  display: inline-block;
-  padding: 1rem 2rem;
-  background-color: #3b82f6;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 2.5rem;
+  background-color: var(--button-primary);
   color: white;
   border-radius: 8px;
   font-weight: 600;
   transition: all 0.3s ease;
-  border: 2px solid #3b82f6;
+  border: 2px solid var(--button-primary);
   font-size: 1rem;
+  text-decoration: none;
 }
 
 .contact-button:hover {
-  background-color: transparent;
-  color: #3b82f6;
+  background-color: var(--button-primary-hover);
+  border-color: var(--button-primary-hover);
   transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(59, 130, 246, 0.3);
+  box-shadow: 0 6px 20px rgba(59, 130, 246, 0.3);
 }
 
 .contact-button.twitter {
@@ -44,18 +40,28 @@
 }
 
 .contact-button.twitter:hover {
-  background-color: transparent;
-  color: #1da1f2;
+  background-color: #0d8bd9;
+  border-color: #0d8bd9;
+  box-shadow: 0 6px 20px rgba(29, 161, 242, 0.3);
 }
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
   .contact-buttons {
     flex-direction: column;
     align-items: center;
+    gap: 1rem;
   }
 
   .contact-button {
     width: 100%;
-    max-width: 250px;
+    max-width: 280px;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-button {
+    padding: 0.875rem 2rem;
+    font-size: 0.95rem;
   }
 }

@@ -1,9 +1,6 @@
 /* === TECNOLOGÍAS === */
 #tecnologias {
   background-color: var(--bg-secondary);
-  border-radius: 15px;
-  margin: 2rem auto;
-  padding: 4rem 2rem;
 }
 
 .tecnologias-grid-container {
@@ -14,34 +11,33 @@
 
 .categoria {
   background: var(--bg-card);
-  border-radius: 15px;
-  padding: 2rem;
-  box-shadow: 0 10px 25px var(--shadow);
+  border-radius: 12px;
+  padding: 2.5rem;
+  box-shadow: 0 4px 20px var(--shadow);
   border: 1px solid var(--border-color);
 }
 
 .tecnologia-titulo {
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
   padding-bottom: 1rem;
-  border-bottom: 2px solid;
-  border-image: var(--gradient-primary) 1;
+  border-bottom: 2px solid var(--border-color);
 }
 
 .tecnologia-titulo h3 {
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   font-weight: 600;
-  color: var(--text-accent);
+  color: var(--text-primary);
 }
 
 .tecnologias-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
   gap: 1.5rem;
 }
 
 .tecnologia-item {
   background: var(--bg-primary);
-  border-radius: 10px;
+  border-radius: 8px;
   padding: 1.5rem 1rem;
   text-align: center;
   transition: all 0.3s ease;
@@ -54,8 +50,8 @@
 }
 
 .tecnologia-item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px var(--shadow);
+  transform: translateY(-4px);
+  box-shadow: 0 6px 20px var(--shadow);
   border-color: var(--text-accent);
 }
 
@@ -80,26 +76,41 @@
 }
 
 @media (max-width: 768px) {
-  #tecnologias {
-    padding: 3rem 1rem;
+  .categoria {
+    padding: 2rem;
   }
 
   .tecnologias-grid {
-    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 1rem;
   }
 
   .tecnologia-item {
     height: 110px;
-    padding: 1rem 0.75rem;
-  }
-
-  .categoria {
-    padding: 1.5rem;
+    padding: 1.25rem 0.75rem;
   }
 }
 
 @media (max-width: 480px) {
+  .categoria {
+    padding: 1.5rem;
+  }
+
   .tecnologias-grid {
     grid-template-columns: repeat(3, 1fr);
+  }
+
+  .tecnologia-item {
+    height: 100px;
+    padding: 1rem 0.5rem;
+  }
+
+  .tecnologia-item img {
+    width: 32px;
+    height: 32px;
+  }
+
+  .tecnologia-item p {
+    font-size: 0.8rem;
   }
 }

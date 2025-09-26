@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
 import { Navbar } from './components/navbar/navbar';
 import { Header } from './components/header/header';
 import { Proyects } from './components/proyects/proyects';
@@ -10,7 +9,7 @@ import { Contact } from './components/contact/contact';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, Navbar, Header, Proyects, Technologies, Skills, Certificates, Contact],
+  imports: [Navbar, Header, Proyects, Technologies, Skills, Certificates, Contact],
   templateUrl: './app.html',
   styleUrl: './app.css',
 })
