@@ -1,14 +1,46 @@
+/* === VARIABLES CSS PARA TEMA CLARO/OSCURO === */
+:root {
+  /* Colores base - Tema oscuro (por defecto) */
+  --bg-primary: #0f172a;
+  --bg-secondary: rgba(30, 41, 59, 0.7);
+  --bg-card: rgba(15, 23, 42, 0.8);
+  --text-primary: #e2e8f0;
+  --text-secondary: #94a3b8;
+  --text-accent: #3b82f6;
+  --border-color: rgba(255, 255, 255, 0.1);
+  --shadow: rgba(0, 0, 0, 0.2);
+  --gradient-primary: linear-gradient(90deg, #3b82f6, #8b5cf6);
+  --gradient-secondary: linear-gradient(135deg, #3b82f6, #8b5cf6);
+  --navbar-bg: rgba(15, 23, 42, 0.95);
+}
+
+[data-theme='light'] {
+  /* Colores base - Tema claro */
+  --bg-primary: #f8fafc;
+  --bg-secondary: rgba(226, 232, 240, 0.7);
+  --bg-card: rgba(248, 250, 252, 0.9);
+  --text-primary: #1e293b;
+  --text-secondary: #475569;
+  --text-accent: #2563eb;
+  --border-color: rgba(30, 41, 59, 0.1);
+  --shadow: rgba(30, 41, 59, 0.1);
+  --gradient-primary: linear-gradient(90deg, #2563eb, #4f46e5);
+  --gradient-secondary: linear-gradient(135deg, #2563eb, #4f46e5);
+  --navbar-bg: rgba(248, 250, 252, 0.95);
+}
+
 /* === ESTILOS GENERALES === */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 
 body {
-  background-color: #0f172a;
-  color: #e2e8f0;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
   line-height: 1.6;
   scroll-behavior: smooth;
 }
@@ -26,7 +58,7 @@ h2 {
   font-size: 2.5rem;
   text-align: center;
   margin-bottom: 1rem;
-  background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+  background: var(--gradient-primary);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -37,7 +69,7 @@ h2 {
   text-align: center;
   font-size: 1.1rem;
   margin-bottom: 3rem;
-  color: #94a3b8;
+  color: var(--text-secondary);
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
