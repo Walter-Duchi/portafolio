@@ -1,31 +1,74 @@
-body {
-  margin: 0;
-  padding: 0;
-}
-
+/* === ESTILOS GENERALES === */
 * {
   margin: 0;
   padding: 0;
-  font-family: Helvetica, sans-serif, Arial;
-  text-decoration: none;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #0f172a;
+  color: #e2e8f0;
+  line-height: 1.6;
+  scroll-behavior: smooth;
 }
 
 section {
   display: flex;
   flex-direction: column;
-  padding: 2rem 0;
-  border: black 2px solid;
-  max-width: 800px;
+  padding: 4rem 2rem;
+  max-width: 1200px;
   width: 100%;
   margin: 0 auto;
 }
 
-header {
-  max-width: 800px;
-  width: 100%;
-  margin: 0 auto;
+h2 {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 1rem;
+  background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-weight: 700;
+}
+
+.section-description {
+  text-align: center;
+  font-size: 1.1rem;
+  margin-bottom: 3rem;
+  color: #94a3b8;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 li {
   list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+  section {
+    padding: 3rem 1rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  section {
+    padding: 2rem 0.5rem;
+  }
+
+  h2 {
+    font-size: 1.8rem;
+  }
 }

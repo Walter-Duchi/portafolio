@@ -1,365 +1,95 @@
-<!DOCTYPE html>
-<html lang="es">
+<section id="proyectos">
+    <h2>Mis Proyectos Destacados</h2>
+    <p class="section-description">Una selección de mis trabajos más recientes y representativos</p>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portafolio Profesional</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
+    <nav class="proyect-nav">
+        <a href="#" class="active">Todos</a>
+        <a href="#">Full Stack</a>
+        <a href="#">Front End</a>
+        <a href="#">Back End</a>
+        <a href="#">Multiplataforma</a>
+    </nav>
 
-        body {
-            background-color: #f8f9fa;
-            color: #333;
-            line-height: 1.6;
-            padding: 2rem;
-        }
-
-        section {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem;
-            background-color: white;
-            border-radius: 12px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-        }
-
-        .proyect-header {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-
-        .proyect-header h2 {
-            font-size: 2.5rem;
-            color: #2c3e50;
-            margin-bottom: 1.5rem;
-            position: relative;
-            display: inline-block;
-        }
-
-        .proyect-header h2::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 4px;
-            background: linear-gradient(to right, #3498db, #2ecc71);
-            border-radius: 2px;
-        }
-
-        .proyect-nav {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            flex-wrap: wrap;
-            margin-top: 1.5rem;
-        }
-
-        .proyect-nav a {
-            padding: 0.6rem 1.2rem;
-            border-radius: 30px;
-            text-decoration: none;
-            color: #555;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            border: 1px solid #e0e0e0;
-            background-color: #f8f9fa;
-        }
-
-        .proyect-nav a:hover,
-        .proyect-nav a.active {
-            background: linear-gradient(135deg, #3498db, #2ecc71);
-            color: white;
-            border-color: transparent;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(52, 152, 219, 0.3);
-        }
-
-        .proyect-container {
-            display: flex;
-            flex-direction: column;
-            gap: 2rem;
-        }
-
-        .proyect-card {
-            background: white;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            display: flex;
-            flex-direction: row;
-            height: 300px;
-        }
-
-        .proyect-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-        }
-
-        .proyect-card>div:first-child {
-            flex: 0 0 40%;
-            overflow: hidden;
-        }
-
-        .proyect-card img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-
-        .proyect-card:hover img {
-            transform: scale(1.05);
-        }
-
-        .proyect-info {
-            padding: 2rem;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            flex: 1;
-        }
-
-        .proyect-info>p:first-child {
-            text-transform: uppercase;
-            font-size: 0.8rem;
-            font-weight: 600;
-            color: #3498db;
-            margin-bottom: 0.5rem;
-            letter-spacing: 1px;
-        }
-
-        .proyect-info h3 {
-            font-size: 1.6rem;
-            color: #2c3e50;
-            margin-bottom: 1rem;
-        }
-
-        .proyect-info>p:nth-child(3) {
-            color: #666;
-            margin-bottom: 1.5rem;
-            line-height: 1.6;
-        }
-
-        .proyect-links {
-            display: flex;
-            gap: 1rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .btn {
-            padding: 0.7rem 1.5rem;
-            border-radius: 6px;
-            text-decoration: none;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            text-align: center;
-            display: inline-block;
-        }
-
-        .btn:first-child {
-            background-color: #3498db;
-            color: white;
-            border: 1px solid #3498db;
-        }
-
-        .btn:last-child {
-            background-color: transparent;
-            color: #3498db;
-            border: 1px solid #3498db;
-        }
-
-        .btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        .btn:first-child:hover {
-            background-color: #2980b9;
-            border-color: #2980b9;
-        }
-
-        .btn:last-child:hover {
-            background-color: #f8f9fa;
-        }
-
-        .proyect-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-        }
-
-        .proyect-tags span {
-            background-color: #f1f8ff;
-            color: #3498db;
-            padding: 0.3rem 0.8rem;
-            border-radius: 20px;
-            font-size: 0.75rem;
-            font-weight: 500;
-        }
-
-        /* Responsive */
-        @media (max-width: 900px) {
-            .proyect-card {
-                flex-direction: column;
-                height: auto;
-            }
-
-            .proyect-card>div:first-child {
-                flex: 0 0 250px;
-            }
-
-            .proyect-info {
-                padding: 1.5rem;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .proyect-nav {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .proyect-nav a {
-                width: 80%;
-                text-align: center;
-            }
-
-            section {
-                padding: 1rem;
-            }
-
-            .proyect-links {
-                flex-direction: column;
-            }
-        }
-    </style>
-</head>
-
-<body>
-    <section id="proyects">
-        <div class="proyect-header">
-            <h2>Mis Proyectos Destacados</h2>
-            <nav class="proyect-nav">
-                <a href="#" class="active">Todos</a>
-                <a href="#">Full Stack</a>
-                <a href="#">Front End</a>
-                <a href="#">Back End</a>
-                <a href="#">Multiplataforma</a>
-            </nav>
-        </div>
-
-        <div class="proyect-container">
-            <div class="proyect-card">
-                <div>
-                    <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80"
-                        alt="Imagen del proyecto" />
-                </div>
-                <div class="proyect-info">
-                    <div>
-                        <p>Backend</p>
-                        <h3>Spring Backend</h3>
-                        <p>API Rest, Backend con Spring Boot, Spring JPA y Spring Security. Implementación de
-                            autenticación JWT y arquitectura de microservicios.</p>
-                    </div>
-                    <div>
-                        <div class="proyect-links">
-                            <a class="btn" href="#">Ver proyecto</a>
-                            <a class="btn" href="#">Código fuente</a>
-                        </div>
-                        <div class="proyect-tags">
-                            <span>Java</span>
-                            <span>Spring Boot</span>
-                            <span>JPA</span>
-                            <span>MySQL</span>
-                        </div>
-                    </div>
-                </div>
+    <div class="proyect-container">
+        <div class="proyect-card">
+            <div class="proyect-image">
+                <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80"
+                    alt="Imagen del proyecto" />
             </div>
-
-            <div class="proyect-card">
+            <div class="proyect-info">
                 <div>
-                    <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80"
-                        alt="Imagen del proyecto" />
+                    <p class="proyect-category">Backend</p>
+                    <h3>Spring Backend</h3>
+                    <p class="proyect-description">API Rest, Backend con Spring Boot, Spring JPA y Spring Security.
+                        Implementación de autenticación JWT y arquitectura de microservicios.</p>
                 </div>
-                <div class="proyect-info">
-                    <div>
-                        <p>Front End</p>
-                        <h3>E-commerce React</h3>
-                        <p>Interfaz de usuario moderna para plataforma de comercio electrónico con carrito de compras,
-                            filtros y sistema de pagos integrado.</p>
-                    </div>
-                    <div>
-                        <div class="proyect-links">
-                            <a class="btn" href="#">Ver proyecto</a>
-                            <a class="btn" href="#">Código fuente</a>
-                        </div>
-                        <div class="proyect-tags">
-                            <span>React</span>
-                            <span>Redux</span>
-                            <span>CSS3</span>
-                            <span>API REST</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="proyect-card">
                 <div>
-                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80"
-                        alt="Imagen del proyecto" />
-                </div>
-                <div class="proyect-info">
-                    <div>
-                        <p>Full Stack</p>
-                        <h3>Plataforma Educativa</h3>
-                        <p>Sistema completo de gestión de cursos online con panel de administración, foros de discusión
-                            y sistema de evaluaciones automatizadas.</p>
+                    <div class="proyect-links">
+                        <a class="btn" href="#">Ver proyecto</a>
+                        <a class="btn" href="#">Código fuente</a>
                     </div>
-                    <div>
-                        <div class="proyect-links">
-                            <a class="btn" href="#">Ver proyecto</a>
-                            <a class="btn" href="#">Código fuente</a>
-                        </div>
-                        <div class="proyect-tags">
-                            <span>MongoDB</span>
-                            <span>Express</span>
-                            <span>React</span>
-                            <span>Node.js</span>
-                        </div>
+                    <div class="proyect-tags">
+                        <span>Java</span>
+                        <span>Spring Boot</span>
+                        <span>JPA</span>
+                        <span>MySQL</span>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
 
-    <script>
-        // Efecto de filtrado (simulado)
-        document.querySelectorAll('.proyect-nav a').forEach(link => {
-            link.addEventListener('click', function (e) {
-                e.preventDefault();
+        <div class="proyect-card">
+            <div class="proyect-image">
+                <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80"
+                    alt="Imagen del proyecto" />
+            </div>
+            <div class="proyect-info">
+                <div>
+                    <p class="proyect-category">Front End</p>
+                    <h3>E-commerce React</h3>
+                    <p class="proyect-description">Interfaz de usuario moderna para plataforma de comercio electrónico
+                        con carrito de compras, filtros y sistema de pagos integrado.</p>
+                </div>
+                <div>
+                    <div class="proyect-links">
+                        <a class="btn" href="#">Ver proyecto</a>
+                        <a class="btn" href="#">Código fuente</a>
+                    </div>
+                    <div class="proyect-tags">
+                        <span>React</span>
+                        <span>Redux</span>
+                        <span>CSS3</span>
+                        <span>API REST</span>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-                // Remover clase activa de todos los enlaces
-                document.querySelectorAll('.proyect-nav a').forEach(item => {
-                    item.classList.remove('active');
-                });
-
-                // Agregar clase activa al enlace clickeado
-                this.classList.add('active');
-
-                // Aquí iría la lógica real de filtrado
-                console.log(`Filtrando por: ${this.textContent}`);
-            });
-        });
-    </script>
-</body>
-
-</html>
+        <div class="proyect-card">
+            <div class="proyect-image">
+                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80"
+                    alt="Imagen del proyecto" />
+            </div>
+            <div class="proyect-info">
+                <div>
+                    <p class="proyect-category">Full Stack</p>
+                    <h3>Plataforma Educativa</h3>
+                    <p class="proyect-description">Sistema completo de gestión de cursos online con panel de
+                        administración, foros de discusión y sistema de evaluaciones automatizadas.</p>
+                </div>
+                <div>
+                    <div class="proyect-links">
+                        <a class="btn" href="#">Ver proyecto</a>
+                        <a class="btn" href="#">Código fuente</a>
+                    </div>
+                    <div class="proyect-tags">
+                        <span>MongoDB</span>
+                        <span>Express</span>
+                        <span>React</span>
+                        <span>Node.js</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,153 +1,46 @@
-<!DOCTYPE html>
-<html lang="es">
+<section id="certificados">
+    <h2>Logros y Certificados</h2>
+    <p class="section-description">Reconocimientos y certificaciones que validan mis conocimientos y habilidades</p>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Logros</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            background: #0b1c22;
-            color: #fff;
-        }
-
-        h2 {
-            text-align: center;
-            font-size: 2.5rem;
-            margin: 30px 0;
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
-            max-width: 1000px;
-            margin: auto;
-            padding: 20px;
-        }
-
-        .card {
-            position: relative;
-            overflow: hidden;
-            border-radius: 10px;
-        }
-
-        .card img {
-            width: 100%;
-            height: 12rem;
-            display: block;
-            border-radius: 10px;
-            transition: transform 0.4s ease;
-        }
-
-        .card:hover img {
-            transform: scale(1.1);
-        }
-
-        .overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.7);
-            color: #fff;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-end;
-            padding: 20px;
-            box-sizing: border-box;
-        }
-
-        .card:hover .overlay {
-            opacity: 1;
-        }
-
-        .overlay .fecha {
-            font-size: 0.9rem;
-            margin-bottom: 8px;
-            opacity: 0.8;
-        }
-
-        .overlay h3 {
-            margin: 5px 0;
-            font-size: 1.2rem;
-        }
-
-        .overlay p {
-            font-size: 0.9rem;
-            margin-bottom: 12px;
-        }
-
-        .overlay button {
-            background: #00b894;
-            border: none;
-            padding: 10px 15px;
-            border-radius: 6px;
-            color: #fff;
-            font-weight: bold;
-            cursor: pointer;
-            transition: background 0.3s;
-        }
-
-        .overlay button:hover {
-            background: #019170;
-        }
-    </style>
-</head>
-
-<body>
-    <h2>Logros</h2>
-
-    <div class="grid">
-        <!-- Tarjeta 1 -->
-        <div class="card">
+    <div class="certificates-grid">
+        <div class="certificate-card">
             <img src="certificado1.jpg" alt="Certificado 1">
-            <div class="overlay">
+            <div class="certificate-overlay">
                 <span class="fecha">Junio de 2023</span>
-                <button>Ver Certificado</button>
+                <button class="certificate-btn">Ver Certificado</button>
                 <h3>Primer lugar en Hackathon 2023</h3>
                 <p>Proyecto Upskilling And Reskilling Challenge en colaboración con BID y Ministerio de Economía.</p>
             </div>
         </div>
 
-        <!-- Tarjeta 2 -->
-        <div class="card">
+        <div class="certificate-card">
             <img src="certificado2.jpg" alt="Certificado 2">
-            <div class="overlay">
+            <div class="certificate-overlay">
                 <span class="fecha">Abril de 2023</span>
-                <button>Ver Certificado</button>
+                <button class="certificate-btn">Ver Certificado</button>
                 <h3>Especialización en Frontend</h3>
                 <p>React, Vue, Next.js - Centro de Formación Avanzada para Profesionales.</p>
             </div>
         </div>
 
-        <!-- Tarjeta 3 -->
-        <div class="card">
+        <div class="certificate-card">
             <img src="certificado3.jpg" alt="Certificado 3">
-            <div class="overlay">
+            <div class="certificate-overlay">
                 <span class="fecha">Mayo de 2023</span>
-                <button>Ver Certificado</button>
+                <button class="certificate-btn">Ver Certificado</button>
                 <h3>Diseño UX de Google</h3>
                 <p>Curso oficial de Diseño de Experiencia de Usuario con Google.</p>
             </div>
         </div>
 
-        <!-- Tarjeta 4 -->
-        <div class="card">
+        <div class="certificate-card">
             <img src="certificado4.jpg" alt="Certificado 4">
-            <div class="overlay">
+            <div class="certificate-overlay">
                 <span class="fecha">Marzo de 2023</span>
-                <button>Ver Certificado</button>
+                <button class="certificate-btn">Ver Certificado</button>
                 <h3>Administración de Proyectos</h3>
                 <p>Curso de principios básicos de gestión de proyectos en UCI.</p>
             </div>
         </div>
     </div>
-</body>
-
-</html>
+</section>
