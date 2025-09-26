@@ -66,8 +66,8 @@
 }
 
 .contact-button.whatsapp {
-  background-color: #25d366;
-  border-color: #25d366;
+  background-color: hsl(142, 70%, 40%);
+  border-color: hsl(142, 70%, 40%);
 }
 
 .contact-button.whatsapp:hover {
