@@ -1,108 +1,303 @@
-<section id="technologies">
-    <h2 class="titulo">Technologias</h2>
-    <p class="descripcion">Estas son las tecnologias que manejo:</p>
+<!DOCTYPE html>
+<html lang="es">
 
-    <div class="tecnologias">
-        <div class="frontend">
-            <div class="tecnologia-titulo">
-                <h3>Frontend</h3>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tecnologías - Portfolio</title>
+    <style>
+        /* Estilos generales */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #0f172a;
+            color: #e2e8f0;
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        /* Sección de tecnologías */
+        #technologies {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        .titulo {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 15px;
+            background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-weight: 700;
+        }
+
+        .descripcion {
+            text-align: center;
+            font-size: 1.1rem;
+            margin-bottom: 50px;
+            color: #94a3b8;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Contenedor de categorías */
+        .tecnologias {
+            display: flex;
+            flex-direction: column;
+            gap: 50px;
+        }
+
+        /* Estilos para cada categoría */
+        .categoria {
+            background: rgba(30, 41, 59, 0.7);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .tecnologia-titulo {
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid;
+            border-image: linear-gradient(90deg, #3b82f6, #8b5cf6) 1;
+        }
+
+        .tecnologia-titulo h3 {
+            font-size: 1.8rem;
+            font-weight: 600;
+        }
+
+        /* Grid de tecnologías */
+        .tecnologias-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            gap: 20px;
+        }
+
+        /* Tarjetas de tecnología */
+        .tecnologia-item {
+            background: rgba(15, 23, 42, 0.8);
+            border-radius: 10px;
+            padding: 20px 15px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 120px;
+        }
+
+        .tecnologia-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(59, 130, 246, 0.2);
+            border-color: rgba(59, 130, 246, 0.3);
+        }
+
+        .tecnologia-item img {
+            width: 40px;
+            height: 40px;
+            margin-bottom: 12px;
+            object-fit: contain;
+        }
+
+        .tecnologia-item p {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: #cbd5e1;
+        }
+
+        /* Colores específicos para cada categoría */
+        .frontend .tecnologia-titulo h3 {
+            color: #3b82f6;
+        }
+
+        .backend .tecnologia-titulo h3 {
+            color: #10b981;
+        }
+
+        .aprendiendo .tecnologia-titulo h3 {
+            color: #f59e0b;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .tecnologias-grid {
+                grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+            }
+
+            .tecnologia-item {
+                height: 110px;
+                padding: 15px 10px;
+            }
+
+            .titulo {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .tecnologias-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .categoria {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <section id="technologies">
+        <h2 class="titulo">Tecnologías</h2>
+        <p class="descripcion">En mi viaje por el mundo del desarrollo web, he cultivado experiencia y habilidades en
+            una variedad de tecnologías. Mi stack tecnológico incluye:</p>
+
+        <div class="tecnologias">
+            <!-- Frontend -->
+            <div class="categoria frontend">
+                <div class="tecnologia-titulo">
+                    <h3>Frontend</h3>
+                </div>
+                <div class="tecnologias-grid">
+                    <div class="tecnologia-item">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
+                            alt="HTML5">
+                        <p>HTML5</p>
+                    </div>
+                    <div class="tecnologia-item">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3">
+                        <p>CSS3</p>
+                    </div>
+                    <div class="tecnologia-item">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
+                            alt="JavaScript">
+                        <p>JavaScript</p>
+                    </div>
+                    <div class="tecnologia-item">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
+                            alt="React">
+                        <p>ReactJS</p>
+                    </div>
+                    <div class="tecnologia-item">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg"
+                            alt="TailwindCSS">
+                        <p>TailwindCSS</p>
+                    </div>
+                    <div class="tecnologia-item">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sass/sass-original.svg" alt="SASS">
+                        <p>SASS</p>
+                    </div>
+                    <div class="tecnologia-item">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg"
+                            alt="Figma">
+                        <p>Figma</p>
+                    </div>
+                </div>
             </div>
 
-            <div class="tecnologias-grid">
-                <div class="tecnologia-item">
-                    <img src="assets/img/html.png" alt="HTML5">
-                    <p>HTML5</p>
+            <!-- Backend -->
+            <div class="categoria backend">
+                <div class="tecnologia-titulo">
+                    <h3>Backend</h3>
                 </div>
-                <div class="tecnologia-item">
-                    <img src="assets/img/css.png" alt="CSS3">
-                    <p>CSS3</p>
-                </div>
-                <div class="tecnologia-item">
-                    <img src="assets/img/javascript.png" alt="JavaScript">
-                    <p>JavaScript</p>
-                </div>
-                <div class="tecnologia-item">
-                    <img src="assets/img/angular.png" alt="Angular">
-                    <p>Angular</p>
-                </div>
-                <div class="tecnologia-item">
-                    <img src="assets/img/react.png" alt="React">
-                    <p>React</p>
-                </div>
-                <div class="tecnologia-item">
-                    <img src="assets/img/vue.png" alt="Vue.js">
-                    <p>Vue.js</p>
+                <div class="tecnologias-grid">
+                    <div class="tecnologia-item">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" alt="PHP">
+                        <p>PHP</p>
+                    </div>
+                    <div class="tecnologia-item">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"
+                            alt="NodeJS">
+                        <p>NodeJS</p>
+                    </div>
+                    <div class="tecnologia-item">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-plain.svg"
+                            alt="Laravel">
+                        <p>Laravel</p>
+                    </div>
+                    <div class="tecnologia-item">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg"
+                            alt="ExpressJS">
+                        <p>ExpressJS</p>
+                    </div>
+                    <div class="tecnologia-item">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg"
+                            alt="MySQL">
+                        <p>MySQL</p>
+                    </div>
+                    <div class="tecnologia-item">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg"
+                            alt="MongoDB">
+                        <p>MongoDB</p>
+                    </div>
+                    <div class="tecnologia-item">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg"
+                            alt="Next.js">
+                        <p>Next.js</p>
+                    </div>
+                    <div class="tecnologia-item">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nginx/nginx-original.svg"
+                            alt="Nginx">
+                        <p>Nginx</p>
+                    </div>
+                    <div class="tecnologia-item">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apache/apache-original.svg"
+                            alt="Apache">
+                        <p>Apache</p>
+                    </div>
                 </div>
             </div>
 
+            <!-- Aprendiendo -->
+            <div class="categoria aprendiendo">
+                <div class="tecnologia-titulo">
+                    <h3>Aprendiendo</h3>
+                </div>
+                <div class="tecnologias-grid">
+                    <div class="tecnologia-item">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
+                            alt="Python">
+                        <p>Python</p>
+                    </div>
+                    <div class="tecnologia-item">
+                        <img src="https://astro.build/assets/press/astro-icon-light.png" alt="Astro">
+                        <p>Astro</p>
+                    </div>
+                    <div class="tecnologia-item">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg"
+                            alt="Docker">
+                        <p>Docker</p>
+                    </div>
+                    <div class="tecnologia-item">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git">
+                        <p>Git</p>
+                    </div>
+                    <div class="tecnologia-item">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
+                            alt="GitHub">
+                        <p>GitHub</p>
+                    </div>
+                    <div class="tecnologia-item">
+                        <img src="https://cdn-icons-png.flaticon.com/512/6124/6124995.png" alt="Terminal">
+                        <p>Terminal</p>
+                    </div>
+                </div>
+            </div>
         </div>
+    </section>
+</body>
 
-        <div class="backend">
-            <div class="tecnologia-titulo">
-                <h3>Backend</h3>
-            </div>
-
-            <div class="tecnologias-grid">
-                <div class="tecnologia-item">
-                    <img src="assets/img/html.png" alt="HTML5">
-                    <p>HTML5</p>
-                </div>
-                <div class="tecnologia-item">
-                    <img src="assets/img/css.png" alt="CSS3">
-                    <p>CSS3</p>
-                </div>
-                <div class="tecnologia-item">
-                    <img src="assets/img/javascript.png" alt="JavaScript">
-                    <p>JavaScript</p>
-                </div>
-                <div class="tecnologia-item">
-                    <img src="assets/img/angular.png" alt="Angular">
-                    <p>Angular</p>
-                </div>
-                <div class="tecnologia-item">
-                    <img src="assets/img/react.png" alt="React">
-                    <p>React</p>
-                </div>
-                <div class="tecnologia-item">
-                    <img src="assets/img/vue.png" alt="Vue.js">
-                    <p>Vue.js</p>
-                </div>
-            </div>
-
-        </div>
-        <div class="fullstack">
-            <div class="tecnologia-titulo">
-                <h3>Fullstack</h3>
-            </div>
-
-            <div class="tecnologias-grid">
-                <div class="tecnologia-item">
-                    <img src="assets/img/html.png" alt="HTML5">
-                    <p>HTML5</p>
-                </div>
-                <div class="tecnologia-item">
-                    <img src="assets/img/css.png" alt="CSS3">
-                    <p>CSS3</p>
-                </div>
-                <div class="tecnologia-item">
-                    <img src="assets/img/javascript.png" alt="JavaScript">
-                    <p>JavaScript</p>
-                </div>
-                <div class="tecnologia-item">
-                    <img src="assets/img/angular.png" alt="Angular">
-                    <p>Angular</p>
-                </div>
-                <div class="tecnologia-item">
-                    <img src="assets/img/react.png" alt="React">
-                    <p>React</p>
-                </div>
-                <div class="tecnologia-item">
-                    <img src="assets/img/vue.png" alt="Vue.js">
-                    <p>Vue.js</p>
-                </div>
-            </div>
-
-        </div>
-
-    </div>
-</section>
+</html>
