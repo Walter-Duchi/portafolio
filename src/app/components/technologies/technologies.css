@@ -1,34 +1,36 @@
 /* === TECNOLOGÍAS === */
 #tecnologias {
-  background-color: rgba(30, 41, 59, 0.3);
+  background-color: var(--bg-secondary);
   border-radius: 15px;
   margin: 2rem auto;
+  padding: 4rem 2rem;
 }
 
-.tecnologias {
-  display: flex;
-  flex-direction: column;
-  gap: 3rem;
+.tecnologias-grid-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
 }
 
 .categoria {
-  background: rgba(30, 41, 59, 0.7);
+  background: var(--bg-card);
   border-radius: 15px;
   padding: 2rem;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 10px 25px var(--shadow);
+  border: 1px solid var(--border-color);
 }
 
 .tecnologia-titulo {
   margin-bottom: 1.5rem;
   padding-bottom: 1rem;
   border-bottom: 2px solid;
-  border-image: linear-gradient(90deg, #3b82f6, #8b5cf6) 1;
+  border-image: var(--gradient-primary) 1;
 }
 
 .tecnologia-titulo h3 {
   font-size: 1.8rem;
   font-weight: 600;
+  color: var(--text-accent);
 }
 
 .tecnologias-grid {
@@ -38,12 +40,12 @@
 }
 
 .tecnologia-item {
-  background: rgba(15, 23, 42, 0.8);
+  background: var(--bg-primary);
   border-radius: 10px;
   padding: 1.5rem 1rem;
   text-align: center;
   transition: all 0.3s ease;
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-color);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -53,8 +55,8 @@
 
 .tecnologia-item:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(59, 130, 246, 0.2);
-  border-color: rgba(59, 130, 246, 0.3);
+  box-shadow: 0 10px 20px var(--shadow);
+  border-color: var(--text-accent);
 }
 
 .tecnologia-item img {
@@ -68,22 +70,20 @@
 .tecnologia-item p {
   font-size: 0.9rem;
   font-weight: 500;
-  color: #cbd5e1;
+  color: var(--text-secondary);
 }
 
-.frontend .tecnologia-titulo h3 {
-  color: #3b82f6;
-}
-
-.backend .tecnologia-titulo h3 {
-  color: #10b981;
-}
-
-.aprendiendo .tecnologia-titulo h3 {
-  color: #f59e0b;
+@media (max-width: 1024px) {
+  .tecnologias-grid-container {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 768px) {
+  #tecnologias {
+    padding: 3rem 1rem;
+  }
+
   .tecnologias-grid {
     grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
   }
@@ -92,14 +92,14 @@
     height: 110px;
     padding: 1rem 0.75rem;
   }
+
+  .categoria {
+    padding: 1.5rem;
+  }
 }
 
 @media (max-width: 480px) {
   .tecnologias-grid {
     grid-template-columns: repeat(3, 1fr);
-  }
-
-  .categoria {
-    padding: 1.5rem;
   }
 }

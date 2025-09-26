@@ -1,41 +1,44 @@
-import { Injectable } from '@angular/core';
+import { Injectable, signal } from '@angular/core';
 
 @Injectable({
   providedIn: 'root',
 })
-export class Theme {
-  private currentTheme = 'light';
+export class ThemeService {
+  private currentTheme = signal<'dark' | 'light'>('dark');
 
   constructor() {
     this.loadTheme();
   }
 
   toggleTheme(): void {
-    this.currentTheme = this.currentTheme === 'dark' ? 'light' : 'dark';
-    this.applyTheme(this.currentTheme);
-    localStorage.setItem('portfolio-theme', this.currentTheme);
+    const newTheme = this.currentTheme() === 'dark' ? 'light' : 'dark';
+    this.currentTheme.set(newTheme);
+    this.applyTheme(newTheme);
+    localStorage.setItem('portfolio-theme', newTheme);
   }
 
   private loadTheme(): void {
-    // 1. Intentar cargar tema guardado
-    const savedTheme = localStorage.getItem('portfolio-theme');
+    const savedTheme = localStorage.getItem('portfolio-theme') as 'dark' | 'light';
 
-    // 2. Si no hay tema guardado, usar preferencia del sistema
     if (savedTheme) {
-      this.currentTheme = savedTheme;
+      this.currentTheme.set(savedTheme);
     } else {
       const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      this.currentTheme = systemPrefersDark ? 'dark' : 'light';
+      this.currentTheme.set(systemPrefersDark ? 'dark' : 'light');
     }
 
-    this.applyTheme(this.currentTheme);
+    this.applyTheme(this.currentTheme());
   }
 
   private applyTheme(theme: string): void {
     document.documentElement.setAttribute('data-theme', theme);
   }
 
-  getCurrentTheme(): string {
-    return this.currentTheme;
+  getCurrentTheme() {
+    return this.currentTheme();
+  }
+
+  getThemeSignal() {
+    return this.currentTheme.asReadonly();
   }
 }

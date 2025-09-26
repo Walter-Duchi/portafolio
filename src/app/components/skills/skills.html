@@ -4,26 +4,11 @@
         efectivas</p>
 
     <div class="skills-container">
-        <div class="skills-section procedimientos">
-            <h3 class="section-title">Procedimientos de Prueba</h3>
+        <div class="skills-section">
             <div class="tags-container">
-                <span class="tag">Conocimiento de Depuración</span>
-                <span class="tag">Estructuras de Datos y Algoritmos</span>
-            </div>
-        </div>
-
-        <div class="skills-section soft-skills">
-            <h3 class="section-title">Habilidades Personales</h3>
-            <div class="tags-container">
-                <span class="tag">Resolución de Problemas</span>
-                <span class="tag">Comunicación</span>
-                <span class="tag">Aprendizaje Continuo</span>
-                <span class="tag">Gestión del Tiempo y Organización</span>
-                <span class="tag">Adaptabilidad</span>
-                <span class="tag">Creatividad e Innovación</span>
-                <span class="tag">Trabajo en Equipo</span>
-                <span class="tag">Liderazgo</span>
-                <span class="tag">Inteligencia Emocional</span>
+                @for (skill of skills; track skill) {
+                <span class="tag">{{ skill }}</span>
+                }
             </div>
         </div>
     </div>

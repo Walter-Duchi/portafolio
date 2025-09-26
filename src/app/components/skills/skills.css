@@ -1,8 +1,9 @@
 /* === HABILIDADES === */
 #habilidades {
-  background-color: rgba(30, 41, 59, 0.3);
+  background-color: var(--bg-secondary);
   border-radius: 15px;
   margin: 2rem auto;
+  padding: 4rem 2rem;
 }
 
 .skills-container {
@@ -12,36 +13,29 @@
 }
 
 .skills-section {
-  background: rgba(30, 41, 59, 0.7);
+  background: var(--bg-card);
   border-radius: 15px;
   padding: 2rem;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.section-title {
-  font-size: 1.5rem;
-  color: #3b82f6;
-  margin-bottom: 1.5rem;
-  padding-bottom: 0.75rem;
-  border-bottom: 2px solid rgba(59, 130, 246, 0.3);
+  box-shadow: 0 10px 25px var(--shadow);
+  border: 1px solid var(--border-color);
 }
 
 .tags-container {
   display: flex;
   flex-wrap: wrap;
   gap: 0.75rem;
+  justify-content: center;
 }
 
 .tag {
   display: inline-block;
-  background: linear-gradient(135deg, #3b82f6, #2563eb);
+  background: var(--gradient-primary);
   color: white;
   padding: 0.75rem 1.5rem;
   border-radius: 50px;
   font-size: 0.95rem;
   font-weight: 500;
-  box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 6px var(--shadow);
   transition: all 0.3s ease;
   cursor: default;
   position: relative;
@@ -61,18 +55,18 @@
 
 .tag:hover {
   transform: translateY(-3px);
-  box-shadow: 0 7px 14px rgba(50, 50, 93, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 7px 14px var(--shadow);
 }
 
 .tag:hover:before {
   left: 100%;
 }
 
-.soft-skills .tag {
-  background: linear-gradient(135deg, #8b5cf6, #7c3aed);
-}
-
 @media (max-width: 768px) {
+  #habilidades {
+    padding: 3rem 1rem;
+  }
+
   .skills-section {
     padding: 1.5rem;
   }
@@ -84,10 +78,6 @@
 }
 
 @media (max-width: 480px) {
-  .section-title {
-    font-size: 1.3rem;
-  }
-
   .tags-container {
     gap: 0.5rem;
   }

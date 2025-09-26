@@ -3,93 +3,39 @@
     <p class="section-description">Una selección de mis trabajos más recientes y representativos</p>
 
     <nav class="proyect-nav">
-        <a href="#" class="active">Todos</a>
-        <a href="#">Full Stack</a>
-        <a href="#">Front End</a>
-        <a href="#">Back End</a>
-        <a href="#">Multiplataforma</a>
+        @for (category of ['todos', 'fullstack', 'frontend', 'backend', 'multiplataforma']; track category) {
+        <a href="#" [class.active]="activeFilter === category"
+            (click)="filterProjects(category); $event.preventDefault()">
+            {{ getCategoryDisplayName(category) }}
+        </a>
+        }
     </nav>
 
     <div class="proyect-container">
+        @for (project of filteredProjects; track project) {
         <div class="proyect-card">
             <div class="proyect-image">
-                <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80"
-                    alt="Imagen del proyecto" />
+                <img title="{{ project.title }}" [src]="project.image" [alt]="project.title" />
             </div>
             <div class="proyect-info">
                 <div>
-                    <p class="proyect-category">Backend</p>
-                    <h3>Spring Backend</h3>
-                    <p class="proyect-description">API Rest, Backend con Spring Boot, Spring JPA y Spring Security.
-                        Implementación de autenticación JWT y arquitectura de microservicios.</p>
+                    <p class="proyect-category">{{ getCategoryDisplayName(project.category) }}</p>
+                    <h3>{{ project.title }}</h3>
+                    <p class="proyect-description">{{ project.description }}</p>
                 </div>
                 <div>
                     <div class="proyect-links">
-                        <a class="btn" href="#">Ver proyecto</a>
-                        <a class="btn" href="#">Código fuente</a>
+                        <a class="btn" [href]="project.demoLink || '#'" target="_blank">Ver proyecto</a>
+                        <a class="btn" [href]="project.codeLink || '#'" target="_blank">Código fuente</a>
                     </div>
                     <div class="proyect-tags">
-                        <span>Java</span>
-                        <span>Spring Boot</span>
-                        <span>JPA</span>
-                        <span>MySQL</span>
+                        @for (tag of project.tags; track tag) {
+                        <span>{{ tag }}</span>
+                        }
                     </div>
                 </div>
             </div>
         </div>
-
-        <div class="proyect-card">
-            <div class="proyect-image">
-                <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80"
-                    alt="Imagen del proyecto" />
-            </div>
-            <div class="proyect-info">
-                <div>
-                    <p class="proyect-category">Front End</p>
-                    <h3>E-commerce React</h3>
-                    <p class="proyect-description">Interfaz de usuario moderna para plataforma de comercio electrónico
-                        con carrito de compras, filtros y sistema de pagos integrado.</p>
-                </div>
-                <div>
-                    <div class="proyect-links">
-                        <a class="btn" href="#">Ver proyecto</a>
-                        <a class="btn" href="#">Código fuente</a>
-                    </div>
-                    <div class="proyect-tags">
-                        <span>React</span>
-                        <span>Redux</span>
-                        <span>CSS3</span>
-                        <span>API REST</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="proyect-card">
-            <div class="proyect-image">
-                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80"
-                    alt="Imagen del proyecto" />
-            </div>
-            <div class="proyect-info">
-                <div>
-                    <p class="proyect-category">Full Stack</p>
-                    <h3>Plataforma Educativa</h3>
-                    <p class="proyect-description">Sistema completo de gestión de cursos online con panel de
-                        administración, foros de discusión y sistema de evaluaciones automatizadas.</p>
-                </div>
-                <div>
-                    <div class="proyect-links">
-                        <a class="btn" href="#">Ver proyecto</a>
-                        <a class="btn" href="#">Código fuente</a>
-                    </div>
-                    <div class="proyect-tags">
-                        <span>MongoDB</span>
-                        <span>Express</span>
-                        <span>React</span>
-                        <span>Node.js</span>
-                    </div>
-                </div>
-            </div>
-        </div>
+        }
     </div>
 </section>

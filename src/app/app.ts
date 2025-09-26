@@ -1,19 +1,19 @@
-import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
-import { Header } from './components/header/header';
+import { Component } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
 import { Navbar } from './components/navbar/navbar';
-import { Technologies } from './components/technologies/technologies';
+import { Header } from './components/header/header';
 import { Proyects } from './components/proyects/proyects';
+import { Technologies } from './components/technologies/technologies';
 import { Skills } from './components/skills/skills';
 import { Certificates } from './components/certificates/certificates';
 import { Contact } from './components/contact/contact';
 
 @Component({
   selector: 'app-root',
-  imports: [Header, Navbar, Technologies, Proyects, Skills, Certificates, Contact],
+  imports: [RouterOutlet, Navbar, Header, Proyects, Technologies, Skills, Certificates, Contact],
   templateUrl: './app.html',
   styleUrl: './app.css',
-  changeDetection: ChangeDetectionStrategy.OnPush, //evitar comprobaciones innecesarias
 })
 export class App {
-  protected readonly title = signal('portafolio');
+  title = 'portfolio';
 }
