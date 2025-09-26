@@ -20,9 +20,15 @@
   --button-secondary-hover: #d1d5db;
   --tag-bg: #2563eb;
   --tag-text: #ffffff;
+
+  --button-proyectos: hsl(123, 63%, 70%);
+  --button-proyectos-hover: hsl(123, 63%, 80%);
 }
 
 [data-theme='dark'] {
+  --button-proyectos: hsl(160, 83%, 20%);
+  --button-proyectos-hover: hsl(157, 88%, 12%);
+
   /* Paleta de colores profesional - Tema oscuro */
   --bg-primary: #0a0a0a;
   --bg-primary-transparente: rgba(0, 0, 0, 0.85);
@@ -183,15 +189,15 @@ a {
   box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
 }
 
-.btn-secondary {
-  background-color: transparent;
+.btn-proyectos {
+  background-color: var(--button-proyectos);
   color: var(--text-primary);
   border-color: var(--border-color);
 }
 
-.btn-secondary:hover {
-  background-color: var(--button-secondary);
-  border-color: var(--button-secondary-hover);
+.btn-proyectos:hover {
+  background-color: var(--button-proyectos-hover);
+  border-color: var(--border-color);
   transform: translateY(-2px);
 }
 

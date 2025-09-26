@@ -25,8 +25,9 @@
                 </div>
                 <div>
                     <div class="proyect-links">
-                        <a class="btn btn-primary" [href]="project.demoLink || '#'" target="_blank">Ver proyecto</a>
-                        <a class="btn btn-secondary" [href]="project.codeLink || '#'" target="_blank">Código fuente</a>
+                        <a class="btn btn-proyectos" [href]="project.demoLink || '#'" target="_blank">Ver proyecto</a>
+                        <a class="btn btn-proyectos" [href]="project.codeLink || '#'" target="_blank">Código fuente</a>
+                        <button class="btn btn-proyectos" (click)="openExplanation(project)">Ver explicación</button>
                     </div>
                     <div class="proyect-tags">
                         @for (tag of project.tags; track tag) {

@@ -100,4 +100,10 @@ export class Proyects {
     };
     return names[category] || category;
   }
+
+  openExplanation(project: Project): void {
+    // Aquí puedes implementar la lógica para abrir un modal o video
+    alert(`Próximamente: Explicación detallada del proyecto "${project.title}"`);
+    // En el futuro, esto puede abrir un modal con un video explicativo
+  }
 }
