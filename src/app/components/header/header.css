@@ -7,7 +7,7 @@
   padding: 2rem 0; /* Reducido */
   margin: 0 auto;
   max-width: 800px;
-  gap: 1.5rem;
+  gap: 1rem;
 }
 
 .profile-container {
@@ -60,7 +60,6 @@
   font-weight: 500;
   gap: 0.75rem;
   transition: all 0.3s ease;
-  margin-bottom: 1.5rem;
 }
 
 .disponibilidad:hover {
