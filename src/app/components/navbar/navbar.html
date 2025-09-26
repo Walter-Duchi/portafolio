@@ -1,16 +1,31 @@
 <nav class="navbar">
-    <div class="logo-container">
-        <a href="#" class="logo">Walter Duchi</a>
+    <div class="nav-container">
+        <div class="logo-container">
+            <a href="#" class="logo">Walter Duchi</a>
+        </div>
+
+        <div class="nav-right">
+            <ul class="nav-links" [class.active]="isMenuOpen">
+                <li><a href="#inicio" (click)="closeMenu()">Inicio</a></li>
+                <li><a href="#proyectos" (click)="closeMenu()">Proyectos</a></li>
+                <li><a href="#tecnologias" (click)="closeMenu()">Tecnologías</a></li>
+                <li><a href="#habilidades" (click)="closeMenu()">Habilidades</a></li>
+                <li><a href="#certificados" (click)="closeMenu()">Certificados</a></li>
+                <li><a href="#contacto" (click)="closeMenu()">Contacto</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <button class="theme-toggle" (click)="toggleTheme()" aria-label="Cambiar tema">
+                    <span class="theme-icon">{{ getThemeIcon() }}</span>
+                </button>
+
+                <button class="menu-toggle" [class.active]="isMenuOpen" (click)="toggleMenu($event)"
+                    aria-label="Abrir menú">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
     </div>
-    <ul class="nav-links">
-        <li><a href="#inicio">Inicio</a></li>
-        <li><a href="#proyectos">Proyectos</a></li>
-        <li><a href="#tecnologias">Tecnologías</a></li>
-        <li><a href="#habilidades">Habilidades</a></li>
-        <li><a href="#certificados">Certificados</a></li>
-        <li><a href="#contacto">Contacto</a></li>
-    </ul>
-    <button class="theme-toggle" (click)="toggleTheme()" aria-label="Cambiar tema">
-        <span class="theme-icon">{{ getThemeIcon() }}</span>
-    </button>
 </nav>

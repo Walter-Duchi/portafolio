@@ -2,7 +2,6 @@
 #contacto {
   background-color: var(--bg-primary);
   text-align: center;
-  padding: 4rem 0 !important;
 }
 
 .contact-content {
@@ -29,7 +28,7 @@
 
 .contact-buttons {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   gap: 1rem;
 }
 

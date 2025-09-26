@@ -4,7 +4,7 @@ import { Injectable, signal } from '@angular/core';
   providedIn: 'root',
 })
 export class ThemeService {
-  private currentTheme = signal<'dark' | 'light'>('dark');
+  private currentTheme = signal<'dark' | 'light'>('light'); // Cambiado a 'light' por defecto
 
   constructor() {
     this.loadTheme();
@@ -23,8 +23,8 @@ export class ThemeService {
     if (savedTheme) {
       this.currentTheme.set(savedTheme);
     } else {
-      const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      this.currentTheme.set(systemPrefersDark ? 'dark' : 'light');
+      // Por defecto siempre será 'light' para la primera vez
+      this.currentTheme.set('light');
     }
 
     this.applyTheme(this.currentTheme());
