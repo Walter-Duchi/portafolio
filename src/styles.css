@@ -2,6 +2,7 @@
 :root {
   /* Paleta de colores profesional - Tema claro (PREDETERMINADO) */
   --bg-primary: #ffffff;
+  --bg-primary-transparente: rgba(255, 255, 255, 0.85);
   --bg-secondary: #f8f9fa;
   --bg-card: #ffffff;
   --text-primary: #1a1a1a;
@@ -24,6 +25,8 @@
 [data-theme='dark'] {
   /* Paleta de colores profesional - Tema oscuro */
   --bg-primary: #0a0a0a;
+  --bg-primary-transparente: rgba(0, 0, 0, 0.85);
+
   --bg-secondary: #1a1a1a;
   --bg-card: #2d2d2d;
   --text-primary: #ffffff;
