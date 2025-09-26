@@ -75,10 +75,19 @@ section {
 }
 
 .section-content {
-  max-width: 1100px;
+  max-width: 1200px; /* Ajustado a 1200px como en .container */
   width: 100%;
   margin: 0 auto;
   padding: 0 2rem;
+}
+
+/* Ajustes específicos para secciones con menos contenido */
+#contacto {
+  padding: 4rem 0 !important;
+}
+
+#habilidades {
+  padding: 4rem 0 !important;
 }
 
 h1,
@@ -212,11 +221,27 @@ a {
   .container {
     padding: 0 1rem;
   }
+
+  #contacto {
+    padding: 2.5rem 0 !important;
+  }
+
+  #habilidades {
+    padding: 2.5rem 0 !important;
+  }
 }
 
 @media (max-width: 480px) {
   section {
     padding: 2rem 0;
+  }
+
+  #contacto {
+    padding: 2rem 0 !important;
+  }
+
+  #habilidades {
+    padding: 2rem 0 !important;
   }
 
   h2 {
